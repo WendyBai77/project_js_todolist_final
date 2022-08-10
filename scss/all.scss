@@ -1,0 +1,15 @@
+//變數
+@import "variable";
+//所有全域變數與mixin(透過@mixin將常用語法記錄起來，需使用時再呼叫)
+@import "mixin";
+//css reset
+@import "reset";
+//全站設定
+@import "base";
+
+@import "layout";
+
+@import "page/index";
+@import "page/cart";
+@import "page/login";
+@import "page/register";

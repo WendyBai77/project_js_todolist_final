@@ -1,0 +1,321 @@
+.cartNav {
+    max-width: 1024px;
+    margin: 0 auto;
+    color: $primary;
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        margin: 10px 15px;
+
+        @include w-sm {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+.nav-list {
+    color: $primary;
+    width: 20%;
+
+    h3 {
+        font-size: 32px;
+
+        span {
+            font-size: $font-m;
+            margin-left: 5px;
+        }
+    }
+}
+
+.nav-list {
+    .menu {
+        margin-top: 1em;
+
+        a {
+            display: block;
+            padding: 10px 15px;
+            border-bottom: 1px solid #3D1101;
+            color: $primary;
+
+            &:hover {
+                background: $primary;
+                color: #fff;
+            }
+        }
+    }
+
+    @include w-md {
+        width: 30%;
+    }
+
+    @include w-sm {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+.cart-list {
+    width: 80%;
+
+    .product-Toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 20px;
+        margin-bottom: 26px;
+    }
+
+    @include w-sm {
+        width: 100%;
+
+        .product-Toolbar {
+            margin: 20px 0px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 68%;
+
+    input {
+        border: 2px solid $primary;
+        width: 80%;
+        line-height: 30px;
+    }
+
+    a {
+        display: block;
+        font-size: 20px;
+        padding: 7.6465px 5px;
+        background: $primary;
+        color: #fff;
+    }
+
+    @include w-sm {
+        width: 80%;
+        margin: 0 auto;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    @include w-sm {
+        width: 90%;
+    }
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    a {
+        display: block;
+        padding: 5px 12px;
+        color: $primary;
+        font-weight: bold;
+
+        // position: relative; 為什麼不能在這用相對位置
+        &:first-child {
+            border-right: 1px solid $primary;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .fa-cart-shopping {
+        font-size: $font-l;
+    }
+
+    p {
+        position: absolute;
+        text-align: center;
+        color: #fff;
+        background: #FF5E45;
+        border-radius: 10px;
+        top: -1px;
+        right: 5px;
+        padding: 1.5px 4px;
+        font-size: 4px;
+        line-height: 16px;
+    }
+
+    @include w-sm {
+        margin: 2% 5% 0% 0%;
+    }
+
+    @include w-xs {
+        justify-content: flex-end;
+        margin: 2% 5% 0% 0%;
+    }
+}
+
+.product-cart {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        width: 30%;
+        margin: 0 0 30px 20px;
+        position: relative;
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.16);
+    }
+
+    @include w-md {
+        li {
+            width: 45%;
+        }
+    }
+
+    @include w-sm {
+        justify-content: space-around;
+        li {
+            width: 60%;
+            margin: 0 0 30px 0px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    @include w-xs {
+        li {
+            width: 100%;
+        }
+
+    }
+
+}
+
+/*商品追蹤效果(愛心點擊)*/
+/*原空心heart，透過toggle來切換顯示和隱藏*/
+.fa-regular {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: $font-m;
+    padding: 6px;
+
+}
+
+.fa-solid.fa-heart.likeclick {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(236, 63, 63);
+    font-size: $font-m;
+    padding: 6px;
+    display: none;
+    /*預設隱藏，之後透過toggle切換顯示和隱藏*/
+}
+
+
+/*隱藏標籤超出的部分和移動位置*/
+.ribbon-wrap {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 11px;
+        top: -6px;
+        border: 6px solid;
+        border-color: transparent transparent #029e77 transparent;
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 84px;
+        top: 67px;
+        border: 6px solid;
+        border-color: transparent transparent transparent #029e77;
+        z-index: 2;
+    }
+
+    /*ribbon 標籤設定*/
+    .ribbon {
+        position: absolute;
+        top: 16px;
+        right: -32px;
+        width: 120px;
+        height: 24px;
+        background: #00CC99;
+        color: #fff;
+        line-height: 24px;
+        text-align: center;
+        transform: rotate(45deg);
+        /*轉45度*/
+        font-size: 14px;
+        z-index: 30;
+    }
+}
+
+.product-content {
+    text-align: center;
+    padding: 8px;
+
+    h4 {
+        font-size: $font-m;
+        position: relative;
+        margin-bottom: 20px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 90px;
+            height: 1px;
+            background: $primary;
+            transform: translatex(-50%);
+            bottom: -3px;
+            left: 50%;
+        }
+    }
+
+    span {
+        display: block;
+        font-size: 12px;
+        padding: 5px;
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-family: Roboto-Light;
+        font-size: $font-m;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+
+    button {
+        padding: 2px 30px;
+        text-align: center;
+        white-space: nowrap;
+        color: #FF5E45;
+        border: 1px solid #FF5E45;
+        border-radius: 3px;
+        cursor: pointer;
+        /*按鈕滑過去的時候 游標會變成手指點擊圖案*/
+        &:hover{
+            background: #FF5E45;
+            color: #fff;
+        }
+    }
+}

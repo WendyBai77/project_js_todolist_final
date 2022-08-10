@@ -1,0 +1,126 @@
+.register-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    color: $primary;
+
+    h2 {
+        font-size: $font-xxl;
+        text-align: center;
+        margin-top: 30px;
+
+        span {
+            font-size: $font-m;
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    }
+
+    .form {
+        box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+        border-top: 5px solid #F56C23;
+        justify-content: space-between;
+        padding: 5px 11px 11px 15px;
+        width: 60%;
+        margin: 15px auto;
+
+        h3 {
+            font-size: $font-m;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        @include w-md{
+            width: 70%;
+        }
+        @include w-xs{
+            width: 98%;
+        }
+    }
+
+    .register-container {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            font-size: $font-s;
+            width: 45%;
+
+            span {
+                display: block;
+                font-size: 16px;
+                margin-top: 3px;
+            }
+            @include w-md{
+                width:35% ;
+            }
+            @include w-sm{
+                width: 100%;
+            }
+        }
+
+        @include w-sm{
+            flex-direction: column;
+        }
+    }
+
+    .form-reg {
+        width: 50%;
+
+        .input-wrap {
+            display: flex;
+            position: relative;
+            margin-bottom: 10px;
+
+            input {
+                width: 100%;
+                padding: 8px 28px;
+                border: 1px solid #CCCCCC;
+                box-shadow: inset 0px 1px 0px 0px #ECECEC;
+                border-radius: 3px;
+            }
+
+            i {
+                position: absolute;
+                margin-left: 8px;
+                padding: 9px 0px;
+            }
+        }
+        @include w-md{
+            width:60% ;
+        }
+        @include w-sm{
+            width: 100%;
+            margin-top: 1.2em;
+        }
+    }
+
+    a {
+        color: #FF5E45;
+        font-size: 14px;
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .btn-reg {
+        display: block;
+        width: 40%;
+        padding: 5px;
+        margin-left: auto;
+        background: #FF5E45;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @include w-sm{
+            width: 50%;
+            margin: 5px auto;
+        }
+    }
+}

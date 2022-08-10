@@ -1,0 +1,25 @@
+@mixin hide-text {
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin w-md {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin w-sm {
+    @media (max-width: 568px) {
+        @content;
+    }
+}
+
+
+@mixin w-xs {
+    @media (max-width:360px) {
+        @content;
+    }
+}

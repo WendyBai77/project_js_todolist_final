@@ -1,0 +1,185 @@
+.login-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    color: $primary;
+
+    h2 {
+        font-size: $font-xxl;
+        text-align: center;
+        margin-top: 30px;
+
+        span {
+            font-size: $font-m;
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    }
+
+    .form {
+        box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+        border-top: 5px solid #F56C23;
+        justify-content: space-between;
+        padding: 5px 11px 11px 15px;
+        width: 35%;
+        margin: 15px auto;
+
+        h3 {
+            font-size: $font-m;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        @include w-md {
+            width: 50%;
+        }
+
+        @include w-sm{
+            width: 70%;
+        }
+
+        @include w-xs {
+            width: 98%;
+        }
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+
+        p {
+            font-size: $font-s;
+            width: 45%;
+
+            span {
+                display: block;
+                font-size: 16px;
+                margin-top: 3px;
+            }
+
+            @include w-md {
+                width: 35%;
+            }
+
+            @include w-sm {
+                width: 100%;
+            }
+        }
+
+        @include w-sm {
+            flex-direction: column;
+        }
+    }
+
+    .form-reg {
+        width: 90%;
+
+        .input-wrap {
+            display: flex;
+            position: relative;
+            &:nth-child(2){
+                margin-bottom: 20px;
+            }
+
+            input {
+                width: 100%;
+                padding: 8px 28px;
+                border: 1px solid #CCCCCC;
+                box-shadow: inset 0px 1px 0px 0px #ECECEC;
+                border-radius: 3px;
+            }
+            i {
+                position: absolute;
+                margin-left: 8px;
+                padding: 9px 0px;
+            }
+        }
+
+        @include w-md {
+            width: 95%;
+        }
+
+        @include w-sm {
+            width: 100%;
+            margin-top: 1.2em;
+        }
+    }
+
+    .text-link {
+        color: #FF5E45;
+        font-size: 14px;
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .login-button {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px auto;
+        text-align: center;
+        .btn-reg {
+            display: block;
+            width: 33%;
+            padding: 8px 8px;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            background: rgb(148, 148, 148);
+            &:hover {
+            opacity: 0.8;
+            }
+        }
+       
+        .btn-login {
+            display: block;
+            width: 33%;
+            padding: 5px 8px;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #FF5E45;
+            &:hover {
+            opacity: 0.8;
+            }
+        }
+
+
+        // .login-button {
+        //     display: flex;
+        //     justify-content: space-evenly;
+        //     margin: 20px auto;
+        //     text-align: center;
+        //     .btn-reg , .btn-login {
+        //         display: block;
+        //         width: 33%;
+        //         padding: 5px 8px;
+        //         color: #fff;
+        //         border: none;
+        //         border-radius: 3px;
+        //         cursor: pointer;
+        //         font-size: 14px;
+        //         &:hover {
+        //         opacity: 0.8;
+        //         }
+        //     }
+        //     .btn-reg {
+        //         background: rgb(148, 148, 148);
+        //     }
+           
+        //     .btn-login{
+        //         background: #FF5E45;
+        //     }
+
+        @include w-sm {
+            width: 100%;
+            margin: 5px auto;
+        }
+
+    }
+
+}

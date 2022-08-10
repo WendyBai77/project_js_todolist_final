@@ -1,0 +1,362 @@
+.content {
+    color: $primary;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    h3 {
+        font-size: $font-m;
+        text-align: center;
+        line-height: 28px;
+        margin: 1.6em 0;
+        position: relative;
+
+        span {
+            display: block;
+        }
+
+        &::before {
+            content: " ";
+            position: absolute;
+            width: 110px;
+            height: 1px;
+            background: #979797;
+            top: 55%;
+            left: 28%;
+        }
+
+        &::after {
+            content: " ";
+            position: absolute;
+            width: 110px;
+            height: 1px;
+            background: #979797;
+            top: 55%;
+            right: 28%;
+        }
+    }
+
+    .tips {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        h4 {
+            text-align: center;
+            margin: 1em;
+            font-size: $font-s;
+        }
+
+        li {
+            margin: 0 auto;
+            width: 30%;
+        }
+
+        p {
+            font-size: $font-s;
+            line-height: 20px;
+            padding: 0 1.2em;
+        }
+
+    }
+
+    @include w-md {
+        .container {
+            h3::before {
+                left: 21%;
+            }
+
+            h3::after {
+                right: 21%;
+            }
+        }
+
+        .tips {
+            p {
+                padding: 0 1em;
+            }
+        }
+    }
+
+    @include w-sm {
+        .container {
+
+            h3::before,
+            h3::after {
+                display: none;
+            }
+        }
+
+        .tips {
+            flex-direction: column;
+
+            h3 {
+                font-size: $font-l;
+            }
+
+            h4 {
+                font-size: $font-l;
+            }
+
+            li {
+                width: 60%;
+                margin-bottom: 2.5em;
+            }
+
+            p {
+                font-size: $font-m;
+                text-align: center;
+            }
+        }
+    }
+
+    @include w-xs {
+        .tips {
+            h4 {
+                margin: 0.8em 0em;
+            }
+
+            li {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.chef {
+    background: $primary;
+    color: $secondary;
+    .container {
+        max-width: 1024px;
+        margin: 50px auto;
+        padding: 0 1.5em;
+        display: flex;
+
+        .img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 0.5em 0 1em;
+        }
+
+        .chefInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 1.5em;
+            line-height: 22px;
+
+            h3 {
+                font-size: $font-m;
+
+            }
+
+            span {
+                font-size: 16px;
+                display: block
+            }
+
+            p {
+                margin-top: 15px;
+                width: 90%;
+            }
+        }
+
+        @include w-md {
+            img {
+                width: 50%;
+                object-fit: cover;
+            }
+
+            .chefInfo {
+                margin: 3em 0 3em 1.3em;
+            }
+        }
+
+        @include w-sm {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            img {
+                width: 100%;
+            }
+
+        }
+    }
+
+}
+
+.feedback {
+    max-width: 1024px;
+    margin: 0 auto;
+    color: $primary;
+
+    h3 {
+        font-size: $font-l;
+        text-align: center;
+    }
+
+    .feedback-container {
+        margin: 1.5em 0em;
+    }
+
+}
+
+
+.feedback-wrap {
+    display: flex;
+    justify-content: space-around;
+
+    li {
+        display: flex;
+        width: 31%;
+
+        img {
+            border-radius: 50%;
+            width: 67px;
+            height: 67px;
+        }
+    }
+
+    .feedbackContent {
+        margin-bottom: 1.2em;
+    }
+    @include w-sm{
+        flex-direction: column;
+        align-items: center;
+        img {
+            margin: 0 0.5em;
+        }
+        li{
+            width:60%;
+        }
+    }
+    @include w-xs{
+        li{
+            width:90%;
+        }
+    }
+}
+
+
+.feedbackContent {
+    margin: 0 0.6em;
+
+    h4 {
+        font-size: $font-s;
+        padding: 24.5px 0;
+    }
+
+    p {
+        line-height: 22px;
+    }
+
+    span {
+        display: block;
+        text-align: right;
+        margin-top: 1.2em;
+    }  
+}
+
+
+.booking {
+    max-width: 1024px;
+    margin: 50px auto;
+    color: $primary;
+
+    h3 {
+        text-align: center;
+        font-size: $font-l;
+        line-height: 30px;
+
+        span {
+            display: block;
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        margin: 1.5em auto;
+
+        .img {
+            width: 50%;
+            object-fit: cover;
+        }
+
+        @include w-md {
+            img {
+                width: 52%;
+                object-fit: cover;
+            }
+        }
+
+        @include w-xs {
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 100%;
+                padding: 15px 8px;
+            }
+
+            form {
+                width: 90%;
+            }
+        }
+    }
+}
+
+.form-booking {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 15px;
+
+    label {
+        margin-bottom: 8px;
+    }
+
+    input {
+        margin-bottom: 12px;
+        padding: 6px 10px;
+        border: 1px solid #c7c7c7;
+        border-radius: 3px;
+    }
+}
+
+.radio {
+    margin-bottom: 1em;
+
+    .foodVeggie {
+        margin-left: 20px;
+    }
+}
+
+.booking-button {
+    text-align: right;
+
+    .btnCancel,
+    .btnSubmit {
+        padding: 6px 18px;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btnCancel {
+        color: #fff;
+        background: rgba(0, 0, 0, 35%);
+    }
+
+    .btnSubmit {
+        color: #fff;
+        background: #F56C23;
+        margin-left: 10px;
+    }
+}
