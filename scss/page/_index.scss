@@ -1,362 +1,239 @@
-.content {
-    color: $primary;
-    max-width: 1024px;
-    margin: 0 auto;
+body {
+    min-height: 100vh;
+    background: #eee;
+    display: flex;
+    color: $dark;
+    background-image: linear-gradient(174deg,
+            $default 2%,
+            $default 46%,
+            #ffffff 46%,
+            #ffffff 100%,
+            #e8e8e8 100%);
+    letter-spacing: 0.07em;
+}
 
-    h3 {
-        font-size: $font-m;
-        text-align: center;
-        line-height: 28px;
-        margin: 1.6em 0;
-        position: relative;
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
 
-        span {
-            display: block;
-        }
+    @include w-sm {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
 
-        &::before {
-            content: " ";
-            position: absolute;
-            width: 110px;
-            height: 1px;
-            background: #979797;
-            top: 55%;
-            left: 28%;
-        }
+.container {
+    margin: 3rem auto 1.5rem auto;
+    padding: 0 12px;
+    width: 500px;
 
-        &::after {
-            content: " ";
-            position: absolute;
-            width: 110px;
-            height: 1px;
-            background: #979797;
-            top: 55%;
-            right: 28%;
+    @include w-sm {
+        margin-top: 1.5rem;
+    }
+}
+
+.card {
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+input[type='text'] {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    padding-right: 1rem;
+    color: $dark;
+    //CSS::佔位符選擇器，::placeholder選擇器可將佔位符文字的顏色做修改
+    &::placeholder {
+        color: $gray;
+    }
+}
+
+.input {
+    padding: 4px 4px 4px 1rem;
+    display: flex;
+}
+
+input[type="button"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: $dark;
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+
+.main {
+    padding: 0;
+    &.list-empty {
+        display: none;
+    }
+    ul {
+        display: flex;
+        li {
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 0.7px;
         }
     }
 
-    .tips {
+}
+
+.menu {
+    display: flex;
+    text-align: center;
+    color: $gray;
+    font-size: 14px;
+
+    li {
+        padding: 1rem;
+        width: 100%;
+        border-bottom: 2px solid $light;
+
+        &.menu-active {
+            border-bottom: 2px solid $dark;
+            color: $dark;
+            font-weight: bold;
+        }
+        &:hover {
+            cursor: pointer;
+            color: $dark;
+            border-color: rgba(51, 51, 51, 0.3);
+        }
+    }
+}
+
+.cart_content {
+    padding: 0.5rem 1rem 1rem 1rem;
+
+    @include w-sm {
+        padding: 0.5rem 1rem 0.5rem 0.5rem;
+    }
+}
+
+.list {
+    flex-direction: column;
+    li {
+        position: relative;
+        padding-right: 2rem;
         display: flex;
-        justify-content: space-between;
         align-items: center;
 
-        img {
+        @include w-sm {
+            padding-right: 0;
+        }
+
+        .list-delete {
+            position: absolute;
+            opacity: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $dark;
             display: block;
-            margin: 0 auto;
-            border-radius: 50%;
-        }
-
-        h4 {
-            text-align: center;
-            margin: 1em;
-            font-size: $font-s;
-        }
-
-        li {
-            margin: 0 auto;
-            width: 30%;
-        }
-
-        p {
-            font-size: $font-s;
-            line-height: 20px;
-            padding: 0 1.2em;
-        }
-
-    }
-
-    @include w-md {
-        .container {
-            h3::before {
-                left: 21%;
-            }
-
-            h3::after {
-                right: 21%;
+            width: 1rem;
+            height: 1rem;
+            background-image: url("../images/delete.png");
+            
+            background-size: contain;
+            @include w-sm {
+                opacity: 1;
+                width: 12px;
+                height: 12px;
             }
         }
-
-        .tips {
+        /*游標移動到li和.list-delete，顯示delete*/
+        &:hover .list-delete {
+            opacity: 1;
+        }
+        p:hover, .checkbox:hover, .list-delete:hover {
+            cursor: pointer;
+        }
+  
+        &.checkbox-checked {
             p {
-                padding: 0 1em;
+                text-decoration: line-through;
+                color: rgba(51, 51, 51, 0.3);
+            }
+            .checkbox {
+                border-color: transparent;
+                &::after {
+                    opacity: 1;
+                }
             }
         }
+        p {
+            display: block;
+            text-align: left;
+            width: calc(90% - 40px);
+            font-size: 16px;
+            letter-spacing: 0.7px;
+            border-bottom: 1px solid #EFEFEF;
+            user-select: none;
+            overflow: hidden;
+            // box-sizing: border-box;
+            position: relative;
+            padding: 24px 5%;
+            &::after {
+                content: "";
+                width: 5%;
+                height: 100%;
+                background: #FFFFFF;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+        .checkbox {
+            /*核取方塊*/
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #333333;
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin-left: 5%;
+            &::after {
+                opacity: 0;
+                content: "";
+                display: block;
+                width: 10px;
+                height: 100%;
+                border-bottom: 2px solid #25bda9;
+                border-right: 2px solid #25bda9;
+                /*將用border做成的勾勾轉向*/
+                transform: translate(4px, -3px) rotate(45deg);
+                transition: all 0.3s;
+            }
+        }
+    }
+}
+
+.list_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem 1rem 0.5rem;
+    font-size: 14px;
+    a {
+        color: $gray;
     }
 
     @include w-sm {
-        .container {
-
-            h3::before,
-            h3::after {
-                display: none;
-            }
-        }
-
-        .tips {
-            flex-direction: column;
-
-            h3 {
-                font-size: $font-l;
-            }
-
-            h4 {
-                font-size: $font-l;
-            }
-
-            li {
-                width: 60%;
-                margin-bottom: 2.5em;
-            }
-
-            p {
-                font-size: $font-m;
-                text-align: center;
-            }
-        }
-    }
-
-    @include w-xs {
-        .tips {
-            h4 {
-                margin: 0.8em 0em;
-            }
-
-            li {
-                width: 100%;
-            }
-        }
-    }
-}
-
-.chef {
-    background: $primary;
-    color: $secondary;
-    .container {
-        max-width: 1024px;
-        margin: 50px auto;
-        padding: 0 1.5em;
-        display: flex;
-
-        .img {
-            max-width: 100%;
-            height: auto;
-            margin: 0 0.5em 0 1em;
-        }
-
-        .chefInfo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: 0 1.5em;
-            line-height: 22px;
-
-            h3 {
-                font-size: $font-m;
-
-            }
-
-            span {
-                font-size: 16px;
-                display: block
-            }
-
-            p {
-                margin-top: 15px;
-                width: 90%;
-            }
-        }
-
-        @include w-md {
-            img {
-                width: 50%;
-                object-fit: cover;
-            }
-
-            .chefInfo {
-                margin: 3em 0 3em 1.3em;
-            }
-        }
-
-        @include w-sm {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            img {
-                width: 100%;
-            }
-
-        }
-    }
-
-}
-
-.feedback {
-    max-width: 1024px;
-    margin: 0 auto;
-    color: $primary;
-
-    h3 {
-        font-size: $font-l;
-        text-align: center;
-    }
-
-    .feedback-container {
-        margin: 1.5em 0em;
-    }
-
-}
-
-
-.feedback-wrap {
-    display: flex;
-    justify-content: space-around;
-
-    li {
-        display: flex;
-        width: 31%;
-
-        img {
-            border-radius: 50%;
-            width: 67px;
-            height: 67px;
-        }
-    }
-
-    .feedbackContent {
-        margin-bottom: 1.2em;
-    }
-    @include w-sm{
-        flex-direction: column;
-        align-items: center;
-        img {
-            margin: 0 0.5em;
-        }
-        li{
-            width:60%;
-        }
-    }
-    @include w-xs{
-        li{
-            width:90%;
-        }
-    }
-}
-
-
-.feedbackContent {
-    margin: 0 0.6em;
-
-    h4 {
-        font-size: $font-s;
-        padding: 24.5px 0;
-    }
-
-    p {
-        line-height: 22px;
-    }
-
-    span {
-        display: block;
-        text-align: right;
-        margin-top: 1.2em;
-    }  
-}
-
-
-.booking {
-    max-width: 1024px;
-    margin: 50px auto;
-    color: $primary;
-
-    h3 {
-        text-align: center;
-        font-size: $font-l;
-        line-height: 30px;
-
-        span {
-            display: block;
-        }
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        margin: 1.5em auto;
-
-        .img {
-            width: 50%;
-            object-fit: cover;
-        }
-
-        @include w-md {
-            img {
-                width: 52%;
-                object-fit: cover;
-            }
-        }
-
-        @include w-xs {
-            flex-direction: column;
-            align-items: center;
-
-            img {
-                width: 100%;
-                padding: 15px 8px;
-            }
-
-            form {
-                width: 90%;
-            }
-        }
-    }
-}
-
-.form-booking {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin: 0 15px;
-
-    label {
-        margin-bottom: 8px;
-    }
-
-    input {
-        margin-bottom: 12px;
-        padding: 6px 10px;
-        border: 1px solid #c7c7c7;
-        border-radius: 3px;
-    }
-}
-
-.radio {
-    margin-bottom: 1em;
-
-    .foodVeggie {
-        margin-left: 20px;
-    }
-}
-
-.booking-button {
-    text-align: right;
-
-    .btnCancel,
-    .btnSubmit {
-        padding: 6px 18px;
-        border-radius: 3px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .btnCancel {
-        color: #fff;
-        background: rgba(0, 0, 0, 35%);
-    }
-
-    .btnSubmit {
-        color: #fff;
-        background: #F56C23;
-        margin-left: 10px;
+        padding: 1.5rem 0 1rem 0.5rem;
     }
 }

@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RWD 最終作業_多頁式網站(SCSS練習)</title>
-    <link rel="icon" href="images/Bitmap.png" />
-    <meta name="description" content="RWD課程最終作業_製作多頁式網站(SCSS練習)">
+    <title>JS_todolist</title>
+    <link rel="icon" href="images/334674_memori_logo_network_social_star_icon.png" />
+    <meta name="description" content="JS_todolist">
     <!-- FB標籤 -->
-    <meta property="og:title" content="RWD 最終作業_多頁式網站(SCSS練習)" />
-    <meta property="og:description" content="RWD課程最終作業_製作多頁式網站(SCSS練習)" />
-    <meta property="og:url" content="https//:www.google.com.tw" />
+    <meta property="og:title" content="JS_todolist" />
+    <meta property="og:description" content="JS_todolist" />
+    <meta property="og:url" content="https://www.google.com.tw" />
     <meta property="og:type" content="website" /> <!-- FB內容的媒體類型 -->
-    <meta property="og:image" content="images/Bitmap.png" />
-    <link rel="apple-touch-icon" href="images/Bitmap.png" />
+    <meta property="og:image" content="images/334674_memori_logo_network_social_star_icon.png" />
+    <link rel="apple-touch-icon" href="images/334674_memori_logo_network_social_star_icon.png" />
     <meta property="og:image:type" content="png" />
     <meta property="og:image:width" content="224" />
     <meta property="og:image:height" content="50" />
@@ -27,195 +27,29 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <h1> <a href="index.html">六角西餐廳 </a></h1>
-            <ul class="main-menu">
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="cart.html">線上訂餐</a></li>
-                <li><a href="login.html">登入</a></li>
+    <div class="container">
+        <h1>TODO LIST</h1>
+        <div class="card input">
+          <input type="text" placeholder="請輸入待辦事項" />
+          <!-- <a href="#" class="btn_add">+</a> -->
+          <input type="button" value="+">
+        </div>
+        <div class="card main list-empty">
+          <ul class="menu">
+            <li class="menu-active all" data-status="2" >全部</li>
+            <li data-status="0">待完成</li>
+            <li data-status="1">已完成</li>
+          </ul>
+          <div class="cart_content">
+            <ul class="list">
             </ul>
-            <!-- 漢堡選單icon -->
-            <i class="fa-solid fa-bars showmenu"></i>
-            <i class="fa-solid fa-bars showmenu"></i>
-        </div>
-    </div>
-    <div class="banner">
-        <div class="bannerContent">
-            <h2><span>咬一口</span>就無法忘懷的漢堡</h2>
-            <p>七夕絕對無法錯過的好滋味</p>
-            <p> <i class="fa-solid fa-utensils"></i>
-                六角大漢堡 <i class="fa-solid fa-utensils"></i> </p>
-        </div>
-    </div>
-
-    <div class="content">
-        <div class="container">
-            <h3>
-                客人總是在詢問
-                <span>這麼好吃的秘訣是什麼</span>
-            </h3>
-
-            <ul class="tips">
-                <li> <img src="images/feature_1.png" alt="tips01">
-                    <h4>台灣本土蔬菜</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, nulla tenetur rem sed,
-                        voluptatum assumenda doloremque.
-                    </p>
-                </li>
-
-                <li> <img src="images/feature_2.png" alt="tips02">
-                    <h4>專業米其林廚師</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, nulla tenetur rem sed,
-                        voluptatum assumenda doloremque.
-                    </p>
-                </li>
-                <li> <img src="images/feature_3.png" alt="tips02">
-                    <h4>對於專業不能退讓</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, nulla tenetur rem sed,
-                        voluptatum assumenda doloremque.
-                    </p>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-
-    <div class="chef">
-        <div class="container">
-            <img src="images/main_chef_brown.png" alt="">
-            <div class="chefInfo">
-                <h3>今日主廚：帕金森、梅在帕 <span>Tody Chef: Plum in Shock</span> </h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio voluptates mollitia nam est fugiat,
-                    amet atque, deserunt rem culpa dolore in non dolores, labore voluptatum dicta dolorem vel laudantium
-                    velit.
-                    Numquam, officia! Blanditiis maxime, nostrum optio, repellendus ullam esse pariatur fugiat, quam
-                    consequatur expedita vitae provident deserunt repellat illo eligendi dicta laborum distinctio!
-                    Nostrum, quaerat quis molestias similique earum error.</p>
-
+            <div class="list_footer">
+              <p> <span class="num-uncompleted"> 0</span> 個待完成項目</p>
+              <a href="#" class="delete-completed">清除已完成項目</a>
             </div>
+          </div>
         </div>
-    </div>
-
-    <div class="feedback">
-        <h3>聽聽別人的感想</h3>
-        <div class="feedback-container">
-            <ul class="feedback-wrap">
-                <li>
-                    <img src="images/avatar_1.png" alt="顧客回饋01">
-                    <div class="feedbackContent">
-                        <h4>高雄一口吃</h4>
-                        <p>
-                            自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
-                        </p>
-                        <span>-- 產品經理</span>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/avatar_2.png" alt="顧客回饋02">
-                    <div class="feedbackContent">
-                        <h4>廟口小霸王</h4>
-                        <p>
-                            自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
-                        </p>
-                        <span>-- 金身道士</span>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/avatar_3.png" alt="顧客回饋03">
-                    <div class="feedbackContent">
-                        <h4>春天也來了</h4>
-                        <p>
-                            自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
-                        </p>
-                        <span>-- 美麗萬分</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="booking">
-        <h3>我們的位置不太夠坐
-            <Span>要不要先訂位呢？</Span>
-        </h3>
-        <div class="container">
-            <img src="images/Map.png" alt="餐廳位置圖">
-
-            <form class="form-booking" action="index.html">
-                <label for="name">姓名</label>
-                <input id="name" type="text" placeholder="請輸入訂位姓名">
-                <label for="number">電話</label>
-                <input id="number" type="tel" placeholder="02-12345678">
-                <label for="email">信箱</label>
-                <input id="email" type="email" placeholder="test@gmail.com">
-                <label for="num">人數</label>
-                <input id="num" type="number">
-
-                <label for="food">是否需要素食</label>
-                <div class="radio">
-                    <input id="food" type="radio" value="yes" name="food">是
-                    <input class="foodVeggie" id="food" type="radio" value="no" name="food">否
-                </div>
-
-                <div class="booking-button">
-                    <button class="btnCancel" type="button">取消</button>
-                    <button class="btnSubmit" type="submit">送出</button>
-                </div>
-            </form>
-        </div>
-
-
-    </div>
-
-
-
-    <div class="footer">
-        <div class="container">
-            <div class="footerContent">
-                <div class="about">
-                    <h3>關於 六角西餐廳</h3>
-                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum illum veritatis, optio quia,
-                        quisquam repudiandae assumenda, accusantium vel soluta. </p>
-                </div>
-                <div class="connect">
-                    <h3>聯絡方式</h3>
-                    <ul>
-                        <li>高雄市中正五路到底</li>
-                        <li> <a href="tel:+886-2-12345678"> 02-12345678 </a> </li>
-                        <li> <a href="mailto:service@hexschool.com">service@hexschool.com</a> </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="footerLink">
-                <h3>六角西餐廳</h3>
-                <ul class="socialIcon">
-                    <li class="google">
-                        <a href="#" target="_blank">
-                            <i class="fa-brands fa-google-plus-square"></i>
-                        </a>
-                    </li>
-                    <li class="twitter">
-                        <a href="#" target="_blank">
-                            <i class="fa-brands fa-twitter-square"></i>
-                        </a>
-                    </li>
-                    <li class="fb">
-                        <a href="#" target="_blank">
-                            <i class="fa-brands fa-facebook-square"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-
+      </div>
 
 
 
